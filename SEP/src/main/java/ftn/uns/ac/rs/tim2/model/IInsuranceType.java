@@ -1,4 +1,4 @@
-package com.devtechgroup.model;
+package ftn.uns.ac.rs.tim2.model;
 
 public interface IInsuranceType {
 	

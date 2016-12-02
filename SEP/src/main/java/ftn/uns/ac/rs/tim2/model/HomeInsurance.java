@@ -1,4 +1,4 @@
-package com.devtechgroup.model;
+package ftn.uns.ac.rs.tim2.model;
 
 import java.util.Date;
 
@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.devtechgroup.model.TravelInsurance.InsuranceType;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -39,7 +38,7 @@ public class HomeInsurance implements IInsuranceType{
     private Date ends;
 
     @Column(nullable = false, length = 20)
-    private InsuranceType type;
+    private IInsuranceType type;
     
     @Column(nullable = false, length = 20)
     private String address;
@@ -53,7 +52,7 @@ public class HomeInsurance implements IInsuranceType{
     protected HomeInsurance() {} // required for ORM mapping
 
     
-	public HomeInsurance(Long id, double floorArea, Date starts, Date ends, InsuranceType type, String address,
+	public HomeInsurance(Long id, double floorArea, Date starts, Date ends, IInsuranceType type, String address,
 			String owner, Long jMBG) {
 		super();
 		this.id = id;

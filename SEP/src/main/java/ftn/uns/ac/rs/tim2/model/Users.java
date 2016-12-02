@@ -1,4 +1,4 @@
-package com.devtechgroup.model;
+package ftn.uns.ac.rs.tim2.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +18,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "korisnici")
-public class Korisnik {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -50,9 +50,9 @@ public class Korisnik {
     
     private CreditCard creditCard;
 
-    protected Korisnik() {} // required for ORM mapping
+    protected Users() {} // required for ORM mapping
 
-	public Korisnik(Long id, String userName, String pass, String name, String surname, Long jMBG,
+	public Users(Long id, String userName, String pass, String name, String surname, Long jMBG,
 			String passportNumber, String address, String phone, IInsuranceType insurance, String email,
 			CreditCard creditCard) {
 		super();
