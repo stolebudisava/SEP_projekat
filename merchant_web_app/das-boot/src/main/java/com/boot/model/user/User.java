@@ -1,5 +1,7 @@
 package com.boot.model.user;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,55 +24,59 @@ import lombok.ToString;
 @Entity
 @Table(name = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @Column(nullable = false, length = 20)
-    private String userName;
+	@Column(nullable = false, length = 20)
+	private String userName;
 
-    @Column(nullable = false, length = 100)
-    private String pass;
+	@Column(nullable = false, length = 100)
+	private String pass;
 
-    @Column(nullable = false, length = 100)
-    private String name;
+	@Column(nullable = false, length = 100)
+	private String name;
 
-    @Column(nullable = false, length = 100)
-    private String surname;
-    
-    @Column(nullable = false, length = 13)
-    private String JMBG;
-    
-    private String passportNumber;
-    
-    private String address;
-    
-    private String phone;
-    
-    private Insurance insurance;
-    
-    private String email;
-    
-    private CreditCard creditCard;
+	@Column(nullable = false, length = 100)
+	private String surname;
 
-    public User() {} // required for ORM mapping
+	@Column(nullable = false, length = 13)
+	private String userJmbg;
 
-	public User(Long id, String userName, String pass, String name, String surname, String jMBG,
-			String passportNumber, String address, String phone, Insurance insurance, String email,
-			CreditCard creditCard) {
+	private String passportNumber;
+
+	private String address;
+
+	private String phone;
+
+	private ArrayList<Insurance> insurances;
+
+	private String email;
+
+	private CreditCard creditCard;
+
+	private boolean isLoggendIn;
+
+	public User() {
+	}
+
+	public User(Long id, String userName, String pass, String name, String surname, String userJmbg,
+			String passportNumber, String address, String phone, ArrayList<Insurance> insurances, String email,
+			CreditCard creditCard, boolean isLoggendIn) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.pass = pass;
 		this.name = name;
 		this.surname = surname;
-		this.JMBG = jMBG;
+		this.userJmbg = userJmbg;
 		this.passportNumber = passportNumber;
 		this.address = address;
 		this.phone = phone;
-		this.insurance = insurance;
+		this.insurances = insurances;
 		this.email = email;
 		this.creditCard = creditCard;
-	} 
-    
+		this.isLoggendIn = isLoggendIn;
+	}
+
 }

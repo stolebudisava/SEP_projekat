@@ -67,6 +67,26 @@
 	    })
 	    
 	    	//insurances
+	    .state('insurances',{
+	        url:'/insurances',
+	        templateUrl: viewsPrefix + 'insurances.html',
+	        controller:'InsurancesListController'
+	    })
+	    .state('viewInsurance',{
+	       url:'/insurances/:id/view',
+	       templateUrl: viewsPrefix + 'insurance-view.html',
+	       controller:'InsuranceViewController'
+	    })
+	    .state('newInsurance',{
+	        url:'/shipwrecks/new',
+	        templateUrl: viewsPrefix + 'shipwreck-add.html',
+	        controller:'ShipwreckCreateController'
+	    })
+	    .state('editInsurance',{
+	        url:'/insurances/:id/edit',
+	        templateUrl: viewsPrefix + 'insurance-edit.html',
+	        controller:'InsuranceEditController'
+	    })
 	    
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',

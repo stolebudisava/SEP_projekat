@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boot.model.insurance.Insurance;
 import com.boot.repository.InsuranceRepository;
 
-
 @RestController
 @RequestMapping("/insurances")
 public class InsuranceController {

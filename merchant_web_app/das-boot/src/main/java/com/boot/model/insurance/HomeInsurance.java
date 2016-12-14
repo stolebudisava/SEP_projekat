@@ -21,7 +21,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "home_insurances")
 
-public class HomeInsurance extends Insurance {
+public class HomeInsurance {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,37 +31,37 @@ public class HomeInsurance extends Insurance {
 	private double floorArea;
 
 	@Column(nullable = false, length = 20)
-	private Date starts;
+	private String homeAddress;
 
 	@Column(nullable = false, length = 20)
-	private Date ends;
+	private String homeOwner;
 
 	@Column(nullable = false, length = 20)
-	private Insurance type;
+	private Long ownerJmbg;
 
 	@Column(nullable = false, length = 20)
-	private String address;
+	private Long ownerName;
 
 	@Column(nullable = false, length = 20)
-	private String owner;
+	private Long ownerSurname;
 
 	@Column(nullable = false, length = 20)
-	private Long JMBG;
+	private InsuranceType type;
 
 	public HomeInsurance() {
-	} // required for ORM mapping
+	}
 
-	public HomeInsurance(Long id, double floorArea, Date starts, Date ends, Insurance type, String address,
-			String owner, Long jMBG) {
+	public HomeInsurance(Long id, double floorArea, String homeAddress, String homeOwner, Long ownerJmbg,
+			Long ownerName, Long ownerSurname, InsuranceType type) {
 		super();
 		this.id = id;
 		this.floorArea = floorArea;
-		this.starts = starts;
-		this.ends = ends;
+		this.homeAddress = homeAddress;
+		this.homeOwner = homeOwner;
+		this.ownerJmbg = ownerJmbg;
+		this.ownerName = ownerName;
+		this.ownerSurname = ownerSurname;
 		this.type = type;
-		this.address = address;
-		this.owner = owner;
-		JMBG = jMBG;
 	}
 
 }

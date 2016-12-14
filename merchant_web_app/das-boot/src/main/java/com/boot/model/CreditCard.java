@@ -12,14 +12,14 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@EqualsAndHashCode(of = "cardId")
+@EqualsAndHashCode(of = "id")
 @ToString
 @Entity
 @Table(name = "credit_cards")
 public class CreditCard {
 	
 	  	@Id
-	    private Long cardId;
+	    private Long id;
 
 	    @Column(nullable = false, length = 100)
 	    private String owner;
@@ -29,15 +29,12 @@ public class CreditCard {
 	    
 	    @Column(nullable = false, length = 100)
 	    private String secureNum;
+	    
+	    @Column(nullable = false, length = 100)
+	    private double cardAmount;
 
 	    protected CreditCard() {} // required for ORM mapping
 
-		public CreditCard(Long cardId, String owner, String expireDate, String secureNum) {
-			super();
-			this.cardId = cardId;
-			this.owner = owner;
-			this.expireDate = expireDate;
-			this.secureNum = secureNum;
-		} 
+		
 	    
 }

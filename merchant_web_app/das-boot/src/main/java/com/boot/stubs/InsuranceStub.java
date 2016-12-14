@@ -17,9 +17,9 @@ public class InsuranceStub {
 
 	//populate initial insurances
 	static {
-		Insurance a = new TravelInsurance();
+		Insurance a = new Insurance();
 		insurances.put(1L, a);
-		Insurance b = new HomeInsurance();
+		Insurance b = new Insurance();
 		insurances.put(2L, b);
 	}
 
