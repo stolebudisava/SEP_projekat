@@ -1,0 +1,17 @@
+<div class="container pad-top">
+  <a ui-sref="newInsurance" class="btn-primary btn-lg nodecoration">Add New Insurance</a>
+  <table class="table shipwrecktable">
+      <tr>
+          <td><h3>All Insurances</h3></td>
+          <td></td>
+      </tr>
+      <tr ng-repeat="insurance in insurances">
+          <td>{{insurance.name}}</td>
+          <td>{{insurance.description}}</td>
+          <td>
+              <a class="btn btn-primary" ui-sref="viewInsurance({id:insurance.id})">View</a>
+              <a class="btn btn-danger"  ng-click="deleteInsurance(insurance)">Delete</a>
+          </td>
+      </tr>
+  </table>
+</div>
