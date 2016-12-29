@@ -44,50 +44,27 @@
 				data: {
 					pageTitle: 'Home'
 				}
-			})
-			
-			//shipwrecks
-			
-			.state('shipwrecks',{
-	        url:'/shipwrecks',
-	        templateUrl: viewsPrefix + 'shipwrecks.html',
-	        controller:'ShipwreckListController'
-	    }).state('viewShipwreck',{
-	       url:'/shipwrecks/:id/view',
-	       templateUrl: viewsPrefix + 'shipwreck-view.html',
-	       controller:'ShipwreckViewController'
-	    }).state('newShipwreck',{
-	        url:'/shipwrecks/new',
-	        templateUrl: viewsPrefix + 'shipwreck-add.html',
-	        controller:'ShipwreckCreateController'
-	    }).state('editShipwreck',{
-	        url:'/shipwrecks/:id/edit',
-	        templateUrl: viewsPrefix + 'shipwreck-edit.html',
-	        controller:'ShipwreckEditController'
-	    })
-	    
-	    	//insurances
-	    .state('insurances',{
+			}).state('insurances',{
 	        url:'/insurances',
 	        templateUrl: viewsPrefix + 'insurances.html',
-	        controller:'InsurancesListController'
-	    })
-	    .state('viewInsurance',{
+	        controller:'InsuranceListController'
+	    }).state('viewInsurance',{
 	       url:'/insurances/:id/view',
 	       templateUrl: viewsPrefix + 'insurance-view.html',
 	       controller:'InsuranceViewController'
-	    })
-	    .state('newInsurance',{
-	        url:'/shipwrecks/new',
-	        templateUrl: viewsPrefix + 'shipwreck-add.html',
-	        controller:'ShipwreckCreateController'
-	    })
-	    .state('editInsurance',{
+	    }).state('newInsurance',{
+	        url:'/insurances/new',
+	        templateUrl: viewsPrefix + 'insurance-add.html',
+	        controller:'InsuranceCreateController'
+	    }).state('editInsurance',{
 	        url:'/insurances/:id/edit',
 	        templateUrl: viewsPrefix + 'insurance-edit.html',
 	        controller:'InsuranceEditController'
+	    }).state('register',{
+	        url:'/register',
+	        templateUrl: viewsPrefix + 'register.html',
+	        controller:'RegisterController'
 	    })
-	    
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
 		function($rootScope, $timeout) {

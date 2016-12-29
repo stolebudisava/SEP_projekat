@@ -11,16 +11,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
-import com.boot.controller.ShipwreckController;
-import com.boot.model.Shipwreck;
-import com.boot.repository.ShipwreckRepository;
+import com.boot.controller.InsuranceController;
+import com.boot.model.insurance.Insurance;
+import com.boot.repository.InsuranceRepository;
 
 public class ShipwreckControllerTest {
 	@InjectMocks
-	private ShipwreckController sc;
+	private InsuranceController sc;
 
 	@Mock
-	private ShipwreckRepository shipwreckRepository;
+	private InsuranceRepository shipwreckRepository;
 
     @Before
     public void init() {
@@ -29,11 +29,11 @@ public class ShipwreckControllerTest {
 	
 	@Test
 	public void testShipwreckGet() {
-    	Shipwreck sw = new Shipwreck();
+    	Insurance sw = new Insurance();
     	sw.setId(1l);
 		when(shipwreckRepository.findOne(1l)).thenReturn(sw);
 
-		Shipwreck wreck = sc.get(1L);
+		Insurance wreck = sc.get(1L);
 
 		verify(shipwreckRepository).findOne(1l);		
 

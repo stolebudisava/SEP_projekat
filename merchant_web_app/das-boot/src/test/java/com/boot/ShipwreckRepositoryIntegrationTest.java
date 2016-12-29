@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.boot.model.Shipwreck;
-import com.boot.repository.ShipwreckRepository;
+import com.boot.model.insurance.Insurance;
+import com.boot.repository.InsuranceRepository;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -19,11 +19,11 @@ import static org.hamcrest.Matchers.*;
 public class ShipwreckRepositoryIntegrationTest {
 
 	@Autowired
-	private ShipwreckRepository shipwreckRepository;
+	private InsuranceRepository shipwreckRepository;
 
 	@Test
 	public void testFindAll() {
-		List<Shipwreck> wrecks = shipwreckRepository.findAll();
+		List<Insurance> wrecks = shipwreckRepository.findAll();
 		assertThat(wrecks.size(), is(greaterThanOrEqualTo(0)));
 	}
 	
