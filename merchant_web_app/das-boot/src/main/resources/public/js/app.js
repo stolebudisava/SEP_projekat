@@ -32,6 +32,8 @@
 		}
 
 		var viewsPrefix = 'views/';
+		var insurancePrefix = 'views/insurance_pages/';
+		var registerPrefix = 'views/register_pages/';
 
 		// For any unmatched url, send to /
 		$urlRouterProvider.otherwise("/")
@@ -46,24 +48,28 @@
 				}
 			}).state('insurances',{
 	        url:'/insurances',
-	        templateUrl: viewsPrefix + 'insurances.html',
+	        templateUrl: insurancePrefix + 'insurances.html',
 	        controller:'InsuranceListController'
 	    }).state('viewInsurance',{
 	       url:'/insurances/:id/view',
-	       templateUrl: viewsPrefix + 'insurance-view.html',
+	       templateUrl: insurancePrefix + 'insurance-view.html',
 	       controller:'InsuranceViewController'
 	    }).state('newInsurance',{
 	        url:'/insurances/new',
-	        templateUrl: viewsPrefix + 'insurance-add.html',
+	        templateUrl: insurancePrefix + 'insurance-add.html',
 	        controller:'InsuranceCreateController'
 	    }).state('editInsurance',{
 	        url:'/insurances/:id/edit',
-	        templateUrl: viewsPrefix + 'insurance-edit.html',
+	        templateUrl: insurancePrefix + 'insurance-edit.html',
 	        controller:'InsuranceEditController'
 	    }).state('register',{
 	        url:'/register',
-	        templateUrl: viewsPrefix + 'register.html',
+	        templateUrl: registerPrefix + 'register.html',
 	        controller:'RegisterController'
+	    }).state('newUserRegistration',{
+	        url:'/register/new',
+	        templateUrl: registerPrefix + 'register.html',
+	        controller:'InsuranceCreateController'
 	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
