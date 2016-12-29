@@ -13,16 +13,16 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+/*
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
 @ToString
 @Entity
 @Table(name = "home_insurances")
-
+*/
 public class HomeInsurance {
-
+/*
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -63,5 +63,5 @@ public class HomeInsurance {
 		this.ownerSurname = ownerSurname;
 		this.type = type;
 	}
-
+*/
 }
