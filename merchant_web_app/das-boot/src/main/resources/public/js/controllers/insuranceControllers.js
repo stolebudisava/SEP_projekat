@@ -1,4 +1,4 @@
-angular.module('app.controllers', []).controller('InsuranceListController', function ($scope, $state, popupService, $window, Insurance) {
+angular.module('app.insuranceControllers', []).controller('InsuranceListController', function ($scope, $state, popupService, $window, Insurance) {
 	$scope.insurances = Insurance.query(); //fetch all insurances. Issues a GET to /api/vi/insurances
 
 	$scope.deleteInsurance = function (insurance) { // Delete a insurance. Issues a DELETE to /api/v1/insurances/:id
@@ -35,14 +35,4 @@ angular.module('app.controllers', []).controller('InsuranceListController', func
 	};
 
 	$scope.loadInsurance(); // Load a Insurance which can be edited on UI
-})/*.controller('RegisterController', function($scope, $state, $stateParams, Insurance) {
-$scope.user = new User();
-
-$scope.addUser = function() { //create a new User. Issues a POST to /api/v1/register
-$scope.users.$save(function() {
-$state.go('register'); // on success go back to the list i.e. register state.
 });
-};
-})
- */
-;

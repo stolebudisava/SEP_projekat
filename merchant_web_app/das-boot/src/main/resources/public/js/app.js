@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('app', ['ui.router', 'navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.controllers', 'app.services'])
+	var app = angular.module('app', ['ui.router', 'navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.insuranceControllers', 'app.registerControllers', 'app.services'])
 
 	// define for requirejs loaded modules
 	define('app', [], function() { return app; });
@@ -65,11 +65,7 @@
 	    }).state('register',{
 	        url:'/register',
 	        templateUrl: registerPrefix + 'register.html',
-	        controller:'RegisterController'
-	    }).state('newUserRegistration',{
-	        url:'/register/new',
-	        templateUrl: registerPrefix + 'register.html',
-	        controller:'InsuranceCreateController'
+	        controller:'RegisterCreateController'
 	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',

@@ -14,9 +14,9 @@ import lombok.Data;
 public class Insurance {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long id;
-	String name;
-	String description;
+	private Long id;
+	private String name;
+	private String description;
 
 	public Insurance() { }
 

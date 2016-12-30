@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boot.model.user.User;
 import com.boot.repository.RegisterRepository;
 
-
-
 @RestController
 @RequestMapping("api/v1/")
 public class RegisterController {
@@ -24,8 +22,8 @@ public class RegisterController {
 
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public User create(@RequestBody User User) {
-		return RegisterRepository.saveAndFlush(User);
+	public User create(@RequestBody User user) {
+		return RegisterRepository.saveAndFlush(user);
 	}
 	/*
 	@RequestMapping(value = "register", method = RequestMethod.GET)

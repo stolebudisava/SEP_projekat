@@ -25,20 +25,20 @@ public class InsuranceStub {
 		return new ArrayList<Insurance>(someInsurances.values());
 	}
 
-	public static Insurance create(Insurance wreck) {
+	public static Insurance create(Insurance insurance) {
 		idIndex += idIndex;
-		wreck.setId(idIndex);
-		someInsurances.put(idIndex, wreck);
-		return wreck;
+		insurance.setId(idIndex);
+		someInsurances.put(idIndex, insurance);
+		return insurance;
 	}
 
 	public static Insurance get(Long id) {
 		return someInsurances.get(id);
 	}
 
-	public static Insurance update(Long id, Insurance wreck) {
-		someInsurances.put(id, wreck);
-		return wreck;
+	public static Insurance update(Long id, Insurance insurance) {
+		someInsurances.put(id, insurance);
+		return insurance;
 	}
 
 	public static Insurance delete(Long id) {
