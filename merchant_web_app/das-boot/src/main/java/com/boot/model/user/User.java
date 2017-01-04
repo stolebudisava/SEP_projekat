@@ -22,7 +22,7 @@ public class User {
 
 	private String name;
 
-	private String surname;
+	private String surName;
 
 	private String userJmbg;
 
@@ -43,14 +43,14 @@ public class User {
 	public User() {
 	}
 
-	public User(Long id, String userName, String pass, String name, String surname, String userJmbg,
+	public User(Long id, String userName, String pass, String name, String surName, String userJmbg,
 			String passportNumber, String address, String phone, String email) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.pass = pass;
 		this.name = name;
-		this.surname = surname;
+		this.surName = surName;
 		this.userJmbg = userJmbg;
 		this.passportNumber = passportNumber;
 		this.address = address;
@@ -58,4 +58,5 @@ public class User {
 		this.email = email;
 	}
 
+	
 }

@@ -1,4 +1,6 @@
-angular.module('app.insuranceControllers', []).controller('InsuranceListController', function ($scope, $state, popupService, $window, Insurance) {
+angular.module('app.insuranceControllers', [])
+
+.controller('InsuranceListController', function ($scope, $state, popupService, $window, Insurance) {
 	$scope.insurances = Insurance.query(); //fetch all insurances. Issues a GET to /api/vi/insurances
 
 	$scope.deleteInsurance = function (insurance) { // Delete a insurance. Issues a DELETE to /api/v1/insurances/:id
@@ -9,11 +11,15 @@ angular.module('app.insuranceControllers', []).controller('InsuranceListControll
 			});
 		}
 	};
-}).controller('InsuranceViewController', function ($scope, $stateParams, Insurance) {
+})
+
+.controller('InsuranceViewController', function ($scope, $stateParams, Insurance) {
 	$scope.insurance = Insurance.get({
 			id : $stateParams.id
 		}); //Get a single Insurance.Issues a GET to /api/v1/insurances/:id
-}).controller('InsuranceCreateController', function ($scope, $state, $stateParams, Insurance) {
+})
+
+.controller('InsuranceCreateController', function ($scope, $state, $stateParams, Insurance) {
 	$scope.insurance = new Insurance(); //create new Insurance instance. Properties will be set via ng-model on UI
 
 	$scope.addInsurance = function () { //create a new Insurance. Issues a POST to /api/v1/Insurances
@@ -21,7 +27,9 @@ angular.module('app.insuranceControllers', []).controller('InsuranceListControll
 			$state.go('insurances'); // on success go back to the list i.e. Insurances state.
 		});
 	};
-}).controller('InsuranceEditController', function ($scope, $state, $stateParams, Insurance) {
+})
+
+.controller('InsuranceEditController', function ($scope, $state, $stateParams, Insurance) {
 	$scope.updateInsurance = function () { //Update the edited Insurance. Issues a PUT to /api/v1/Insurances/:id
 		$scope.insurance.$update(function () {
 			$state.go('insurances'); // on success go back to the list i.e. Insurances state.

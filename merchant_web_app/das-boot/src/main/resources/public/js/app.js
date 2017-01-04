@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('app', ['ui.router', 'navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.insuranceControllers', 'app.registerControllers', 'app.services'])
+	var app = angular.module('app', ['ui.router', 'navController', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'app.insuranceControllers', 'app.registerControllers', 'app.insuranceServices', 'app.registerServices'])
 
 	// define for requirejs loaded modules
 	define('app', [], function() { return app; });
@@ -36,7 +36,7 @@
 		var registerPrefix = 'views/register_pages/';
 
 		// For any unmatched url, send to /
-		$urlRouterProvider.otherwise("/")
+		$urlRouterProvider.otherwise("/");
 
 		$stateProvider
 			// you can set this to no template if you just want to use the html in the page

@@ -18,36 +18,36 @@ import com.boot.repository.RegisterRepository;
 public class RegisterController {
 
 	@Autowired
-	private RegisterRepository RegisterRepository;
+	private RegisterRepository registerRepository;
 
 	
 	@RequestMapping(value = "register", method = RequestMethod.POST)
 	public User create(@RequestBody User user) {
-		return RegisterRepository.saveAndFlush(user);
+		return registerRepository.saveAndFlush(user);
 	}
-	/*
+	
 	@RequestMapping(value = "register", method = RequestMethod.GET)
 	public List<User> list() {
-		return RegisterRepository.findAll();
+		return registerRepository.findAll();
 	}
+	
 	@RequestMapping(value = "register/{id}", method = RequestMethod.GET)
 	public User get(@RequestBody Long id) {
-		return RegisterRepository.findOne(id);
+		return registerRepository.findOne(id);
 	}
 	
 	@RequestMapping(value = "register/{id}", method = RequestMethod.PUT)
 	public User update(@PathVariable Long id, @RequestBody User user) {
-		User existingUser = RegisterRepository.findOne(id);
+		User existingUser = registerRepository.findOne(id);
 		BeanUtils.copyProperties(user, existingUser);
-		return RegisterRepository.saveAndFlush(existingUser);
+		return registerRepository.saveAndFlush(existingUser);
 	}
 	
 	@RequestMapping(value = "register/{id}", method = RequestMethod.DELETE)
 	public User delete(@PathVariable Long id) {
-		User existingUser = RegisterRepository.findOne(id);
-		RegisterRepository.delete(existingUser);
+		User existingUser = registerRepository.findOne(id);
+		registerRepository.delete(existingUser);
 		return existingUser;
 	}
-	*/
 
 }
