@@ -21,11 +21,11 @@ import static org.hamcrest.Matchers.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(App.class)
 @WebIntegrationTest
-public class ShipwreckControllerWebIntegrationTest {
+public class InsuranceControllerWebIntegrationTest {
 	@Test
 	public void testListAll() throws IOException {
 		RestTemplate restTemplate = new TestRestTemplate();
-		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/api/v1/shipwrecks", String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/api/v1/insurances", String.class);
 
 	    assertThat( response.getStatusCode() , equalTo(HttpStatus.OK));
 

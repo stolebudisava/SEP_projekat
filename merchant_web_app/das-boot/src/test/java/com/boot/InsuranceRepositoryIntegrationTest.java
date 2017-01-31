@@ -16,15 +16,15 @@ import static org.hamcrest.Matchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(App.class)
-public class ShipwreckRepositoryIntegrationTest {
+public class InsuranceRepositoryIntegrationTest {
 
 	@Autowired
-	private InsuranceRepository shipwreckRepository;
+	private InsuranceRepository insuranceRepository;
 
 	@Test
 	public void testFindAll() {
-		List<Insurance> wrecks = shipwreckRepository.findAll();
-		assertThat(wrecks.size(), is(greaterThanOrEqualTo(0)));
+		List<Insurance> insurances = insuranceRepository.findAll();
+		assertThat(insurances.size(), is(greaterThanOrEqualTo(0)));
 	}
 	
 }

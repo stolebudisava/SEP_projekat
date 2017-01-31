@@ -15,12 +15,12 @@ import com.boot.controller.InsuranceController;
 import com.boot.model.insurance.Insurance;
 import com.boot.repository.InsuranceRepository;
 
-public class ShipwreckControllerTest {
+public class InsuranceControllerTest {
 	@InjectMocks
-	private InsuranceController sc;
+	private InsuranceController ic;
 
 	@Mock
-	private InsuranceRepository shipwreckRepository;
+	private InsuranceRepository insuranceRepository;
 
     @Before
     public void init() {
@@ -29,16 +29,16 @@ public class ShipwreckControllerTest {
 	
 	@Test
 	public void testShipwreckGet() {
-    	Insurance sw = new Insurance();
-    	sw.setId(1l);
-		when(shipwreckRepository.findOne(1l)).thenReturn(sw);
+    	Insurance insur = new Insurance();
+    	insur.setId(1l);
+		when(insuranceRepository.findOne(1l)).thenReturn(insur);
 
-		Insurance wreck = sc.get(1L);
+		Insurance insurance = ic.get(1L);
 
-		verify(shipwreckRepository).findOne(1l);		
+		verify(insuranceRepository).findOne(1l);		
 
 //		assertEquals(1l, wreck.getId().longValue());	
-		assertThat(wreck.getId(), is(1l));
+		assertThat(insurance.getId(), is(1l));
 	}
 
 }

@@ -11,6 +11,6 @@ public class AppTest {
     public void testApp() {
 		HomeController hc = new HomeController();
 		String result = hc.home();
-        assertEquals( result, "Das Boot, reporting for duty!" );
+        assertEquals( result, "Welcome to insurance companz site!" );
 	}
 }

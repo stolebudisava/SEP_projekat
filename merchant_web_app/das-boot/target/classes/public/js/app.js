@@ -34,9 +34,10 @@
 		var viewsPrefix = 'views/';
 		var insurancePrefix = 'views/insurance_pages/';
 		var registerPrefix = 'views/register_pages/';
+		var loginPrefix = 'views/login_pages/';
 
 		// For any unmatched url, send to /
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise("/login");
 
 		$stateProvider
 			// you can set this to no template if you just want to use the html in the page
@@ -49,23 +50,33 @@
 			}).state('insurances',{
 	        url:'/insurances',
 	        templateUrl: insurancePrefix + 'insurances.html',
-	        controller:'InsuranceListController'
+	        controller:'InsuranceListController',
+	        authenticate: true
 	    }).state('viewInsurance',{
 	       url:'/insurances/:id/view',
 	       templateUrl: insurancePrefix + 'insurance-view.html',
-	       controller:'InsuranceViewController'
+	       controller:'InsuranceViewController',
+	       authenticate: true
 	    }).state('newInsurance',{
 	        url:'/insurances/new',
 	        templateUrl: insurancePrefix + 'insurance-add.html',
-	        controller:'InsuranceCreateController'
+	        controller:'InsuranceCreateController',
+	        authenticate: true
 	    }).state('editInsurance',{
 	        url:'/insurances/:id/edit',
 	        templateUrl: insurancePrefix + 'insurance-edit.html',
-	        controller:'InsuranceEditController'
+	        controller:'InsuranceEditController',
+	        authenticate: true
 	    }).state('register',{
 	        url:'/register',
 	        templateUrl: registerPrefix + 'register.html',
-	        controller:'RegisterCreateController'
+	        controller:'RegisterCreateController',
+	        authenticate: true
+	    }).state('login',{
+	        url:'/login',
+	        templateUrl: loginPrefix + 'login.html',
+	        controller:'loginController',
+	        authenticate: false
 	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
